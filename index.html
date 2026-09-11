@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moji školski radovi</title>
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Moji školski projekti i zadaće</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            background-color: #e8dcc4;
+            color: #3d3024;
+            font-family: Georgia, "Times New Roman", serif;
+        }
+
+        /* Glavni okvir */
+        .container {
+            width: 90%;
+            max-width: 1000px;
+            margin: 50px auto;
+            padding: 40px;
+            background-color: #f4ead5;
+            border: 2px solid #7b6045;
+            box-shadow: 8px 8px 0 #a58b6f;
+        }
+
+        /* Naslov */
+        header {
+            text-align: center;
+            border-bottom: 2px dashed #8a6f52;
+            padding-bottom: 25px;
+            margin-bottom: 35px;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 42px;
+            letter-spacing: 2px;
+            color: #493628;
+        }
+
+        .subtitle {
+            margin-top: 10px;
+            font-size: 17px;
+            color: #806b55;
+            font-style: italic;
+        }
+
+        /* Folderi */
+        .folders {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+
+        .folder {
+            display: block;
+            text-decoration: none;
+            color: #3d3024;
+            background-color: #d6bd91;
+            border: 2px solid #72583f;
+            padding: 25px;
+            min-height: 170px;
+            position: relative;
+            transition: 0.2s;
+            box-shadow: 4px 4px 0 #9b805f;
+        }
+
+        .folder:hover {
+            transform: translateY(-5px);
+            background-color: #cdb181;
+            box-shadow: 7px 7px 0 #806548;
+        }
+
+        /* Mali dio foldera na vrhu */
+        .folder::before {
+            content: "";
+            position: absolute;
+            top: -13px;
+            left: 15px;
+            width: 75px;
+            height: 15px;
+            background-color: #d6bd91;
+            border: 2px solid #72583f;
+            border-bottom: none;
+        }
+
+        .folder-number {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #806348;
+        }
+
+        .folder h2 {
+            margin: 12px 0;
+            font-size: 25px;
+        }
+
+        .folder p {
+            margin: 0;
+            font-size: 15px;
+            color: #665442;
+        }
+
+        /* Podnožje */
+        footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 2px dashed #8a6f52;
+            text-align: center;
+            font-size: 14px;
+            color: #806b55;
+        }
+
+        /* Mobiteli */
+        @media (max-width: 650px) {
+            .container {
+                padding: 25px;
+                margin: 25px auto;
+            }
+
+            h1 {
+                font-size: 30px;
+            }
+
+            .folders {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <header>
+            <h1>Moji školski projekti i zadaće</h1>
+            <div class="subtitle">
+                Filip Vrljić 4.e
+            </div>
+        </header>
+
+        <main class="folders">
+
+            <!-- ZADAĆA 1 -->
+            <!-- Kasnije ovdje možeš promijeniti # u pravi link -->
+            <a href="#" class="folder">
+                <div class="folder-number">Folder 01</div>
+                <h2>Zadaća 1</h2>
+                <p>Ovdje će biti prvi školski projekt ili zadaća.</p>
+            </a>
+
+            <!-- ZADAĆA 2 -->
+            <a href="#" class="folder">
+                <div class="folder-number">Folder 02</div>
+                <h2>Zadaća 2</h2>
+                <p>Ovdje će biti drugi školski projekt ili zadaća.</p>
+            </a>
+
+            <!-- ZADAĆA 3 -->
+            <a href="#" class="folder">
+                <div class="folder-number">Folder 03</div>
+                <h2>Zadaća 3</h2>
+                <p>Ovdje će biti treći školski projekt ili zadaća.</p>
+            </a>
+
+            <!-- ZADAĆA 4 -->
+            <a href="#" class="folder">
+                <div class="folder-number">Folder 04</div>
+                <h2>Zadaća 4</h2>
+                <p>Ovdje će biti četvrti školski projekt ili zadaća.</p>
+            </a>
+
+        </main>
+
+        <footer>
+            © 2026 • Moji školski radovi
+        </footer>
+
+    </div>
+
+</body>
+</html>
+
+</body>
+</html>
