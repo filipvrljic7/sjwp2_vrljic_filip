@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="hr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Skriptni jezici</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <li><a href="Sport.html">Sport</a></li>
+        <li><a href="Vijesti.html">Vijesti</a></li>
+        <li><a href="Novac.html">Novac</a></li>
+      </ul>
+    </nav>
+
+    <h1>Ponavljanje Canvas i i SVG</h1>
+
+    <div class="okvir">
+      <p><i>Canvas</i> je oznaka (tag) HTML5 standarda namijenjena crtanju.</p>
+      <p>
+        Canvas je 2D crtaća platforma unutar web preglednika, a koristi
+        JavaScript i HTML.
+      </p>
+      <p>
+        Upotrebom JavaScript-a se može pristupiti čitavom setu funkcija za
+        crtanje linija,
+      </p>
+      <p>pravokutnika, lukova, crta, teksta …</p>
+      <ul>
+        <li>
+          Canvas API (API - Application Programming Interface - aplikacijsko
+          programsko sučelje) osigurava alate za crtanje grafike putem
+          JavaScript-a i HTML canvas <br />
+          elementa.
+        </li>
+        <li>
+          Canvas API je uglavnom namijenjen 2D crtanju, iako postoji mogućnost
+          rada i sa 3D <br />
+          grafikom preko WebGL API –ja
+        </li>
+        <li>
+          Crtanje grafike s pomoću oznake canvas kombinira poznavanje HTML-a,
+          CSS-a i <br />
+          JavaScripta, pa ćemo njega učiti sljedećem poglavlju.
+        </li>
+      </ul>
+
+      <hr />
+
+      <p>
+        <b>SVG</b>(Scalable Vector Graphics) većinom je manje težine u usporedbi
+        sa Bitmap rasterskom slikom, koja posjeduje otprilike iste rezoluciju i
+        grafički prikaz. <br />Uključivanje SVG-a u HTML dokument omogućava
+        naknadno stiliziranje grafike putem CSS-a, <br />
+        ali i manipulaciju JavaScript-om. Tako možemo promijeniti svojstva, kao
+        što su: boja <br />
+        pozadine, teksta, okvira, na isti način kao i za bilo koji HTML element.
+        <br />
+        Zbog toga je omogućeno i animirati sve SVG objekte preko JavaScript
+        biblioteke kao što je <br />
+        jQuery.
+      </p>
+
+      <hr />
+
+      <h3>Usporedba SVG-a i Canvasa</h3>
+      <table class="usporedba">
+        <tr>
+          <th>CATEGORY</th>
+          <th>canvas</th>
+          <th>SVG</th>
+        </tr>
+        <tr>
+          <td>Supporting elements</td>
+          <td>Bitmap, based on pixels</td>
+          <td>Vector illustration,based on graphic elements</td>
+        </tr>
+        <tr>
+          <td>Operation object</td>
+          <td>Single HTML element</td>
+          <td>various hraphic ele -ments</td>
+        </tr>
+        <tr>
+          <td>Driver</td>
+          <td>JavaScript and other script driven</td>
+          <td>Script or css driven</td>
+        </tr>
+      </table>
+      <br />
+      <table class="kontakt">
+        <tr>
+          <th>Mjesec</th>
+          <th>Ušteda</th>
+          <th>Ušteda za blagajne</th>
+        </tr>
+        <tr>
+          <td>Siječan</td>
+          <td>$100</td>
+          <td rowspan="2">$50</td>
+        </tr>
+        <tr>
+          <td>Veljača</td>
+          <td>$80</td>
+        </tr>
+      </table>
+    </div>
+
+    <p>Ubacite sljedeću sliku ispod:</p>
+    <img src="slika.png" alt="Vector i Raster" />
+    <h2>Primjer SVG-a i Canvasa</h2>
+
+    <svg
+      width="550"
+      height="550"
+      viewBox="0 0 550 550"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <rect width="550" height="550" fill="#7bd5e3" />
+
+      <circle cx="117" cy="125" r="48" fill="yellow" />
+
+      <circle cx="400" cy="125" r="48" fill="white" />
+      <circle cx="460" cy="125" r="48" fill="white" />
+
+      <circle cx="450" cy="400" r="85" fill="yellow" />
+
+      <rect x="388" y="280" width="70" height="72" fill="white" />
+      <polygon points="376,284 423,241 470,284" fill="red" />
+      <circle cx="409" cy="307" r="9" fill="blue" />
+      <rect x="432" y="323" width="17" height="27" fill="black" />
+
+      <rect x="493" y="266" width="10" height="81" fill="brown" />
+      <circle cx="498" cy="266" r="33" fill="#159447" />
+
+      <rect x="0" y="390" width="550" height="160" fill="#4678db" />
+
+      <path d="M117 345 H331 A107 78 0 0 1 117 345 Z" fill="blue" />
+
+      <polygon points="229,151 229,329 112,329" fill="white" />
+      <polygon points="246,211 246,322 328,322" fill="red" />
+
+      <rect x="229" y="144" width="13" height="201" fill="black" />
+
+      <polygon points="242,144 287,164 242,185" fill="white" />
+
+      <g fill="white">
+        <circle cx="179" cy="374" r="12" />
+        <circle cx="224" cy="374" r="12" />
+        <circle cx="269" cy="374" r="12" />
+      </g>
+    </svg>
+
+    <canvas id="mojCanvas" width="550" height="550"></canvas>
+
+    <script>
+      const canvas = document.getElementById("mojCanvas");
+      const ctx = canvas.getContext("2d");
+
+      function pravokutnik(x, y, sirina, visina, boja) {
+        ctx.fillStyle = boja;
+        ctx.fillRect(x, y, sirina, visina);
+      }
+
+      function krug(x, y, r, boja) {
+        ctx.beginPath();
+        ctx.arc(x, y, r, 0, Math.PI * 2);
+        ctx.fillStyle = boja;
+        ctx.fill();
+      }
+
+      function poligon(tocke, boja) {
+        ctx.beginPath();
+        ctx.moveTo(tocke[0][0], tocke[0][1]);
+
+        for (let i = 1; i < tocke.length; i++) {
+          ctx.lineTo(tocke[i][0], tocke[i][1]);
+        }
+
+        ctx.closePath();
+        ctx.fillStyle = boja;
+        ctx.fill();
+      }
+
+      pravokutnik(0, 0, 550, 550, "#7bd5e3");
+
+      krug(120, 125, 48, "yellow");
+
+      krug(400, 125, 50, "white");
+      krug(460, 125, 50, "white");
+
+      krug(450, 400, 85, "yellow");
+
+      pravokutnik(388, 280, 70, 72, "white");
+      poligon(
+        [
+          [376, 284],
+          [423, 241],
+          [470, 284],
+        ],
+        "#F44324",
+      );
+      krug(409, 307, 9, "blue");
+      pravokutnik(432, 323, 17, 27, "black");
+
+      pravokutnik(493, 266, 10, 81, "brown");
+      krug(498, 266, 33, "green");
+
+      pravokutnik(0, 390, 550, 160, "#4678db");
+
+      function val(x, y, sirina) {
+        ctx.beginPath();
+        ctx.moveTo(x, y);
+        ctx.lineTo(x + sirina, y);
+        ctx.fill();
+      }
+
+      [23, 118, 216, 311, 409].forEach((x) => val(x, 435, 86));
+      [57, 156, 253, 350, 446].forEach((x) => val(x, 489, 86));
+
+      ctx.beginPath();
+      ctx.moveTo(117, 345);
+      ctx.lineTo(331, 345);
+      ctx.quadraticCurveTo(310, 423, 224, 423);
+      ctx.quadraticCurveTo(133, 423, 117, 345);
+      ctx.fillStyle = "blue";
+      ctx.fill();
+
+      poligon(
+        [
+          [229, 151],
+          [229, 329],
+          [112, 329],
+        ],
+        "white",
+      );
+
+      poligon(
+        [
+          [246, 211],
+          [246, 322],
+          [328, 322],
+        ],
+        "red",
+      );
+
+      pravokutnik(229, 144, 13, 201, "black");
+
+      poligon(
+        [
+          [242, 144],
+          [287, 164],
+          [242, 185],
+        ],
+        "white",
+      );
+
+      krug(179, 374, 12, "white");
+      krug(224, 374, 12, "white");
+      krug(269, 374, 12, "white");
+    </script>
+  </body>
+</html>

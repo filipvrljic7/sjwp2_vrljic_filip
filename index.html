@@ -1,34 +1,34 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Moji školski radovi</title>
-</head>
-<body>
-    <!DOCTYPE html>
-<html lang="hr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body>
+    <!doctype html>
+    <html lang="hr">
+      <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Moji školski projekti i zadaće</title>
+        <title>Moji školski projekti i zadaće</title>
 
-    <style>
-        * {
+        <style>
+          * {
             box-sizing: border-box;
-        }
+          }
 
-        body {
+          body {
             margin: 0;
             min-height: 100vh;
             background-color: #e8dcc4;
             color: #3d3024;
             font-family: Georgia, "Times New Roman", serif;
-        }
+          }
 
-        /* Glavni okvir */
-        .container {
+          /* Glavni okvir */
+          .container {
             width: 90%;
             max-width: 1000px;
             margin: 50px auto;
@@ -36,38 +36,38 @@
             background-color: #f4ead5;
             border: 2px solid #7b6045;
             box-shadow: 8px 8px 0 #a58b6f;
-        }
+          }
 
-        /* Naslov */
-        header {
+          /* Naslov */
+          header {
             text-align: center;
             border-bottom: 2px dashed #8a6f52;
             padding-bottom: 25px;
             margin-bottom: 35px;
-        }
+          }
 
-        h1 {
+          h1 {
             margin: 0;
             font-size: 42px;
             letter-spacing: 2px;
             color: #493628;
-        }
+          }
 
-        .subtitle {
+          .subtitle {
             margin-top: 10px;
             font-size: 17px;
             color: #806b55;
             font-style: italic;
-        }
+          }
 
-        /* Folderi */
-        .folders {
+          /* Folderi */
+          .folders {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 25px;
-        }
+          }
 
-        .folder {
+          .folder {
             display: block;
             text-decoration: none;
             color: #3d3024;
@@ -78,16 +78,16 @@
             position: relative;
             transition: 0.2s;
             box-shadow: 4px 4px 0 #9b805f;
-        }
+          }
 
-        .folder:hover {
+          .folder:hover {
             transform: translateY(-5px);
             background-color: #cdb181;
             box-shadow: 7px 7px 0 #806548;
-        }
+          }
 
-        /* Mali dio foldera na vrhu */
-        .folder::before {
+          /* Mali dio foldera na vrhu */
+          .folder::before {
             content: "";
             position: absolute;
             top: -13px;
@@ -97,101 +97,90 @@
             background-color: #d6bd91;
             border: 2px solid #72583f;
             border-bottom: none;
-        }
+          }
 
-        .folder-number {
+          .folder-number {
             font-size: 14px;
             text-transform: uppercase;
             letter-spacing: 2px;
             color: #806348;
-        }
+          }
 
-        .folder h2 {
+          .folder h2 {
             margin: 12px 0;
             font-size: 25px;
-        }
+          }
 
-        .folder p {
+          .folder p {
             margin: 0;
             font-size: 15px;
             color: #665442;
-        }
+          }
 
-        /* Podnožje */
-        footer {
+          /* Podnožje */
+          footer {
             margin-top: 40px;
             padding-top: 20px;
             border-top: 2px dashed #8a6f52;
             text-align: center;
             font-size: 14px;
             color: #806b55;
-        }
+          }
 
-        /* Mobiteli */
-        @media (max-width: 650px) {
+          /* Mobiteli */
+          @media (max-width: 650px) {
             .container {
-                padding: 25px;
-                margin: 25px auto;
+              padding: 25px;
+              margin: 25px auto;
             }
 
             h1 {
-                font-size: 30px;
+              font-size: 30px;
             }
 
             .folders {
-                grid-template-columns: 1fr;
+              grid-template-columns: 1fr;
             }
-        }
-    </style>
-</head>
+          }
+        </style>
+      </head>
 
-<body>
-
-    <div class="container">
-
-        <header>
+      <body>
+        <div class="container">
+          <header>
             <h1>Moji školski projekti i zadaće</h1>
-            <div class="subtitle">
-                Filip Vrljić 4.e
-            </div>
-        </header>
+            <div class="subtitle">Filip Vrljić 4.e</div>
+          </header>
 
-        <main class="folders">
-
-            <a href="#" class="folder">
-                <div class="folder-number">Folder 01</div>
-                <h2>Zadaća 1</h2>
-                <p>Ovdje će biti prvi školski projekt ili zadaća.</p>
+          <main class="folders">
+            <a href="ispitna/index.html" class="folder">
+              <div class="folder-number">Folder 01</div>
+              <h2>Zadaća 1</h2>
+              <p>Ovdje će biti prvi školski projekt ili zadaća.</p>
             </a>
 
             <a href="#" class="folder">
-                <div class="folder-number">Folder 02</div>
-                <h2>Zadaća 2</h2>
-                <p>Ovdje će biti drugi školski projekt ili zadaća.</p>
+              <div class="folder-number">Folder 02</div>
+              <h2>Zadaća 2</h2>
+              <p>Ovdje će biti drugi školski projekt ili zadaća.</p>
             </a>
 
             <a href="#" class="folder">
-                <div class="folder-number">Folder 03</div>
-                <h2>Zadaća 3</h2>
-                <p>Ovdje će biti treći školski projekt ili zadaća.</p>
+              <div class="folder-number">Folder 03</div>
+              <h2>Zadaća 3</h2>
+              <p>Ovdje će biti treći školski projekt ili zadaća.</p>
             </a>
 
             <a href="#" class="folder">
-                <div class="folder-number">Folder 04</div>
-                <h2>Zadaća 4</h2>
-                <p>Ovdje će biti četvrti školski projekt ili zadaća.</p>
+              <div class="folder-number">Folder 04</div>
+              <h2>Zadaća 4</h2>
+              <p>Ovdje će biti četvrti školski projekt ili zadaća.</p>
             </a>
+          </main>
 
-        </main>
-
-        <footer>
-            © 2026 • Moji školski radovi
-        </footer>
-
-    </div>
-
-</body>
-</html>
-
-</body>
+          <footer>© 2026 • Moji školski radovi</footer>
+        </div>
+      </body>
+    </html>
+  </body>
 </html>
