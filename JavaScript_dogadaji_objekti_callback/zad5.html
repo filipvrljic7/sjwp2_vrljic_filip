@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Semafor</title>
+</head>
+<body>
+
+    <h1>Semafor</h1>
+
+    <p id="ispis"></p>
+
+    <button id="ukljuci">Uključi</button>
+    <button id="iskljuci">Isključi</button>
+    <button id="crvena">Crvena</button>
+    <button id="zuta">Žuta</button>
+    <button id="zelena">Zelena</button>
+
+    <script>
+        const semafor = {
+            boja: "crvena",
+            trajanje: 30,
+            ukljucen: false,
+
+            promijeniBoju(novaBoja) {
+                if (this.ukljucen) {
+                    this.boja = novaBoja;
+                    this.prikaziStanje();
+                }
+            },
+
+            ukljuci() {
+                this.ukljucen = true;
+                this.prikaziStanje();
+            },
+
+            iskljuci() {
+                this.ukljucen = false;
+                this.prikaziStanje();
+            },
+
+            prikaziStanje() {
+                document.getElementById("ispis").innerHTML =
+                    "Boja: " + this.boja + "<br>" +
+                    "Trajanje: " + this.trajanje + " sekundi<br>" +
+                    "Uključen: " + this.ukljucen;
+            }
+        };
+
+        document.getElementById("ukljuci").addEventListener("click", function() {
+            semafor.ukljuci();
+        });
+
+        document.getElementById("iskljuci").addEventListener("click", function() {
+            semafor.iskljuci();
+        });
+
+        document.getElementById("crvena").addEventListener("click", function() {
+            semafor.promijeniBoju("crvena");
+        });
+
+        document.getElementById("zuta").addEventListener("click", function() {
+            semafor.promijeniBoju("žuta");
+        });
+
+        document.getElementById("zelena").addEventListener("click", function() {
+            semafor.promijeniBoju("zelena");
+        });
+
+        semafor.prikaziStanje();
+    </script>
+
+</body>
+</html>
+

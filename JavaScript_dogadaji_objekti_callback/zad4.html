@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Popis proizvoda</title>
+</head>
+<body>
+
+    <h1>Popis proizvoda</h1>
+
+    <h2>Svi proizvodi</h2>
+    <div id="ispis"></div>
+
+    <h2>Proizvodi skuplji od 50 €</h2>
+    <div id="skupi"></div>
+
+    <h2>Nazivi proizvoda</h2>
+    <div id="nazivi"></div>
+
+    <button id="tehnika">Prikaži tehniku</button>
+
+    <script>
+        const proizvodi = [
+            { naziv: "Laptop", cijena: 800, kategorija: "tehnika", stanjeZalihe: 5 },
+            { naziv: "Miš", cijena: 20, kategorija: "tehnika", stanjeZalihe: 10 },
+            { naziv: "Tipkovnica", cijena: 60, kategorija: "tehnika", stanjeZalihe: 8 },
+            { naziv: "Stolica", cijena: 100, kategorija: "namještaj", stanjeZalihe: 4 },
+            { naziv: "Stol", cijena: 150, kategorija: "namještaj", stanjeZalihe: 3 },
+            { naziv: "Monitor", cijena: 200, kategorija: "tehnika", stanjeZalihe: 6 }
+        ];
+
+        const ispis = document.getElementById("ispis");
+
+        proizvodi.forEach(function(proizvod) {
+            ispis.innerHTML += proizvod.naziv + " - " + proizvod.cijena + " €<br>";
+        });
+
+        const skuplji = proizvodi.filter(function(proizvod) {
+            return proizvod.cijena > 50;
+        });
+
+        skuplji.forEach(function(proizvod) {
+            document.getElementById("skupi").innerHTML +=
+                proizvod.naziv + " - " + proizvod.cijena + " €<br>";
+        });
+
+        const nazivi = proizvodi.map(function(proizvod) {
+            return proizvod.naziv;
+        });
+
+        document.getElementById("nazivi").innerHTML = nazivi.join(", ");
+
+        document.getElementById("tehnika").addEventListener("click", function() {
+            ispis.innerHTML = "";
+
+            const tehnika = proizvodi.filter(function(proizvod) {
+                return proizvod.kategorija === "tehnika";
+            });
+
+            tehnika.forEach(function(proizvod) {
+                ispis.innerHTML += proizvod.naziv + " - " + proizvod.cijena + " €<br>";
+            });
+        });
+    </script>
+
+</body>
+</html>
+

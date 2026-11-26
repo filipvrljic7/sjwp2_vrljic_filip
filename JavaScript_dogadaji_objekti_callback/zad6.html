@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Evidencija učenika</title>
+</head>
+<body>
+
+    <h1>Evidencija učenika</h1>
+
+    <div id="ispis"></div>
+
+    <h2>Dodaj ocjenu</h2>
+
+    <select id="ucenik">
+        <option value="0">Luka</option>
+        <option value="1">Mia</option>
+        <option value="2">Ivan</option>
+    </select>
+
+    <input type="number" id="ocjena" placeholder="Unesi ocjenu">
+    <button id="dodaj">Dodaj ocjenu</button>
+
+    <script>
+
+        function Ucenik(ime, prezime, razred, ocjene) {
+            this.ime = ime;
+            this.prezime = prezime;
+            this.razred = razred;
+            this.ocjene = ocjene;
+
+            this.izracunajProsjek = function() {
+                let zbroj = 0;
+
+                this.ocjene.forEach(function(ocjena) {
+                    zbroj += ocjena;
+                });
+
+                return (zbroj / this.ocjene.length).toFixed(2);
+            };
+
+            this.dodajOcjenu = function(ocjena) {
+                if (ocjena >= 1 && ocjena <= 5) {
+                    this.ocjene.push(ocjena);
+                } else {
+                    alert("Ocjena mora biti od 1 do 5!");
+                }
+            };
+
+            this.prikaziPodatke = function() {
+                return this.ime + " " + this.prezime +
+                    ", razred: " + this.razred +
+                    ", ocjene: " + this.ocjene.join(", ") +
+                    ", prosjek: " + this.izracunajProsjek();
+            };
+        }
+
+        const ucenici = [
+            new Ucenik("Luka", "Horvat", "4.a", [4, 5, 3, 5]),
+            new Ucenik("Mia", "Marić", "3.b", [5, 4, 5, 4]),
+            new Ucenik("Ivan", "Kovač", "2.a", [3, 4, 2, 5])
+        ];
+
+        function prikaziUcenike() {
+            document.getElementById("ispis").innerHTML = "";
+
+            ucenici.forEach(function(ucenik) {
+                document.getElementById("ispis").innerHTML +=
+                    "<p>" + ucenik.prikaziPodatke() + "</p>";
+            });
+        }
+
+        document.getElementById("dodaj").addEventListener("click", function() {
+            const odabir = document.getElementById("ucenik").value;
+            const ocjena = Number(document.getElementById("ocjena").value);
+
+            ucenici[odabir].dodajOcjenu(ocjena);
+
+            prikaziUcenike();
+        });
+
+        prikaziUcenike();
+
+    </script>
+
+</body>
+</html>
+

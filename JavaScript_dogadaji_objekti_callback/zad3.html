@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <title>Kalkulator</title>
+</head>
+<body>
+
+    <input type="number" id="broj1" placeholder="Prvi broj">
+    <input type="number" id="broj2" placeholder="Drugi broj">
+
+    <select id="operacija">
+        <option value="zbroji">Zbrajanje</option>
+        <option value="oduzmi">Oduzimanje</option>
+        <option value="pomnozi">Množenje</option>
+        <option value="podijeli">Dijeljenje</option>
+    </select>
+
+    <button id="gumb">Izračunaj</button>
+
+    <p id="rezultat"></p>
+
+    <script>
+        const broj1 = document.getElementById("broj1");
+        const broj2 = document.getElementById("broj2");
+        const operacija = document.getElementById("operacija");
+        const gumb = document.getElementById("gumb");
+        const rezultat = document.getElementById("rezultat");
+
+        function zbroji(a, b) {
+            return a + b;
+        }
+
+        function oduzmi(a, b) {
+            return a - b;
+        }
+
+        function pomnozi(a, b) {
+            return a * b;
+        }
+
+        function podijeli(a, b) {
+            return a / b;
+        }
+
+        function izvrsi(a, b, operacija) {
+            return operacija(a, b);
+        }
+
+        gumb.addEventListener("click", function() {
+
+            let a = Number(broj1.value);
+            let b = Number(broj2.value);
+
+            if (broj1.value === "" || broj2.value === "") {
+                rezultat.textContent = "Unesi oba broja!";
+            }
+            else if (operacija.value === "podijeli" && b === 0) {
+                rezultat.textContent = "Ne može se dijeliti s nulom!";
+            }
+            else if (operacija.value === "zbroji") {
+                rezultat.textContent = "Rezultat: " + izvrsi(a, b, zbroji);
+            }
+            else if (operacija.value === "oduzmi") {
+                rezultat.textContent = "Rezultat: " + izvrsi(a, b, oduzmi);
+            }
+            else if (operacija.value === "pomnozi") {
+                rezultat.textContent = "Rezultat: " + izvrsi(a, b, pomnozi);
+            }
+            else if (operacija.value === "podijeli") {
+                rezultat.textContent = "Rezultat: " + izvrsi(a, b, podijeli);
+            }
+
+        });
+    </script>
+
+</body>
+</html>
